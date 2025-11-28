@@ -43,14 +43,10 @@
           target: 12000, 
           counted: false,
           init() {
-            window.addEventListener('scroll', () => {
-              const rect = this.$el.getBoundingClientRect();
-              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-              if (isVisible && !this.counted) {
-                this.counted = true;
-                this.animateCounter();
-              }
-            });
+            setTimeout(() => {
+              this.counted = true;
+              this.animateCounter();
+            }, 500);
           },
           animateCounter() {
             const duration = 2000;
@@ -76,14 +72,10 @@
           target: 87, 
           counted: false,
           init() {
-            window.addEventListener('scroll', () => {
-              const rect = this.$el.getBoundingClientRect();
-              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-              if (isVisible && !this.counted) {
-                this.counted = true;
-                this.animateCounter();
-              }
-            });
+            setTimeout(() => {
+              this.counted = true;
+              this.animateCounter();
+            }, 800);
           },
           animateCounter() {
             const duration = 2000;
@@ -109,14 +101,10 @@
           target: 120, 
           counted: false,
           init() {
-            window.addEventListener('scroll', () => {
-              const rect = this.$el.getBoundingClientRect();
-              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-              if (isVisible && !this.counted) {
-                this.counted = true;
-                this.animateCounter();
-              }
-            });
+            setTimeout(() => {
+              this.counted = true;
+              this.animateCounter();
+            }, 1100);
           },
           animateCounter() {
             const duration = 2000;
@@ -142,14 +130,10 @@
           target: 45, 
           counted: false,
           init() {
-            window.addEventListener('scroll', () => {
-              const rect = this.$el.getBoundingClientRect();
-              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-              if (isVisible && !this.counted) {
-                this.counted = true;
-                this.animateCounter();
-              }
-            });
+            setTimeout(() => {
+              this.counted = true;
+              this.animateCounter();
+            }, 1400);
           },
           animateCounter() {
             const duration = 2000;

@@ -11,24 +11,24 @@ class PublicController extends Controller
     {
         $statistics = [
             [
-                'label' => 'Sebaran Alumni',
-                'value' => '67%',
-                'description' => 'Bekerja di sektor industri prioritas (manufaktur, teknologi, dan kreatif).',
+                'label' => 'Total Alumni Terdata',
+                'value' => '12K+',
+                'description' => 'Seluruh alumni yang telah terverifikasi dan aktif di portal.',
             ],
             [
-                'label' => 'Kegiatan Mentoring',
-                'value' => '320',
-                'description' => 'Sesi mentoring karier dan wirausaha selama 12 bulan terakhir.',
+                'label' => 'Serapan Kerja & Wirausaha',
+                'value' => '87%',
+                'description' => 'Alumni yang telah bekerja atau berwirausaha sesuai kompetensi.',
             ],
             [
-                'label' => 'Kontribusi Alumni',
-                'value' => 'Rp1,2M',
-                'description' => 'Bantuan beasiswa, sarana, dan program pengabdian almamater.',
+                'label' => 'Mitra Industri Aktif',
+                'value' => '120+',
+                'description' => 'Perusahaan dan institusi yang bermitra untuk penempatan alumni.',
             ],
             [
-                'label' => 'Update Profil',
-                'value' => '92%',
-                'description' => 'Alumni aktif memperbarui data personal dan profesional tahun ini.',
+                'label' => 'Program Pengabdian',
+                'value' => '45',
+                'description' => 'Program sosial dan pengabdian alumni kepada masyarakat.',
             ],
         ];
 

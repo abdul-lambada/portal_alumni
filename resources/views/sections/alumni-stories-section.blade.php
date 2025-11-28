@@ -55,6 +55,7 @@
                     :src="slide.image"
                     :alt="`Foto ${slide.name}`"
                     class="h-16 w-16 rounded-full object-cover"
+                    loading="lazy"
                   />
                   <div>
                     <h3 class="text-base font-semibold text-white" x-text="slide.name"></h3>
