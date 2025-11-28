@@ -18,13 +18,19 @@
       <div class="mt-10 flex flex-col gap-4 sm:flex-row">
         <a
           href="#register"
-          class="inline-flex items-center justify-center rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-slate-900 shadow-soft transition hover:bg-secondary/90"
+          class="group relative inline-flex items-center justify-center rounded-full bg-gradient-to-r from-secondary to-accent px-8 py-4 text-sm font-bold text-slate-900 shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl hover:from-accent hover:to-secondary"
         >
-          Gabung Komunitas Alumni
+          <span class="relative z-10 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+            </svg>
+            Masuk / Daftar Alumni
+          </span>
+          <div class="absolute inset-0 rounded-full bg-gradient-to-r from-accent to-secondary opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
         </a>
         <a
           href="#highlight"
-          class="inline-flex items-center justify-center rounded-full border border-white/60 px-6 py-3 text-sm font-semibold text-white transition hover:border-white hover:bg-white/10"
+          class="inline-flex items-center justify-center rounded-full border-2 border-white/60 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition-all duration-300 hover:border-white hover:bg-white/10 hover:shadow-lg"
         >
           Lihat Agenda & Prestasi
         </a>
@@ -32,24 +38,141 @@
     </div>
     <div class="relative w-full max-w-xl rounded-3xl bg-white/10 p-6 backdrop-blur md:p-8">
       <div class="grid grid-cols-2 gap-4 text-center text-sm">
-        <div class="rounded-2xl border border-white/20 bg-white/5 p-5">
-          <p class="text-3xl font-semibold">12K+</p>
+        <div class="rounded-2xl border border-white/20 bg-white/5 p-5" x-data="{ 
+          count: 0, 
+          target: 12000, 
+          counted: false,
+          init() {
+            window.addEventListener('scroll', () => {
+              const rect = this.$el.getBoundingClientRect();
+              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+              if (isVisible && !this.counted) {
+                this.counted = true;
+                this.animateCounter();
+              }
+            });
+          },
+          animateCounter() {
+            const duration = 2000;
+            const start = 0;
+            const increment = this.target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= this.target) {
+                current = this.target;
+                clearInterval(timer);
+              }
+              this.count = Math.floor(current);
+            }, 16);
+          }
+        }">
+          <p class="text-3xl font-semibold" x-text="count > 1000 ? (count / 1000).toFixed(1) + 'K+' : count">0K+</p>
           <p class="mt-1 text-xs uppercase tracking-widest text-white/70">Total Alumni Terdata</p>
         </div>
-        <div class="rounded-2xl border border-white/20 bg-white/5 p-5">
-          <p class="text-3xl font-semibold">87%</p>
+        <div class="rounded-2xl border border-white/20 bg-white/5 p-5" x-data="{ 
+          count: 0, 
+          target: 87, 
+          counted: false,
+          init() {
+            window.addEventListener('scroll', () => {
+              const rect = this.$el.getBoundingClientRect();
+              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+              if (isVisible && !this.counted) {
+                this.counted = true;
+                this.animateCounter();
+              }
+            });
+          },
+          animateCounter() {
+            const duration = 2000;
+            const start = 0;
+            const increment = this.target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= this.target) {
+                current = this.target;
+                clearInterval(timer);
+              }
+              this.count = Math.floor(current);
+            }, 16);
+          }
+        }">
+          <p class="text-3xl font-semibold" x-text="count + '%'">0%</p>
           <p class="mt-1 text-xs uppercase tracking-widest text-white/70">Serapan Kerja & Wirausaha</p>
         </div>
-        <div class="rounded-2xl border border-white/20 bg-white/5 p-5">
-          <p class="text-3xl font-semibold">120+</p>
+        <div class="rounded-2xl border border-white/20 bg-white/5 p-5" x-data="{ 
+          count: 0, 
+          target: 120, 
+          counted: false,
+          init() {
+            window.addEventListener('scroll', () => {
+              const rect = this.$el.getBoundingClientRect();
+              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+              if (isVisible && !this.counted) {
+                this.counted = true;
+                this.animateCounter();
+              }
+            });
+          },
+          animateCounter() {
+            const duration = 2000;
+            const start = 0;
+            const increment = this.target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= this.target) {
+                current = this.target;
+                clearInterval(timer);
+              }
+              this.count = Math.floor(current);
+            }, 16);
+          }
+        }">
+          <p class="text-3xl font-semibold" x-text="count + '+'">0+</p>
           <p class="mt-1 text-xs uppercase tracking-widest text-white/70">Mitra Industri Aktif</p>
         </div>
-        <div class="rounded-2xl border border-white/20 bg-white/5 p-5">
-          <p class="text-3xl font-semibold">45</p>
+        <div class="rounded-2xl border border-white/20 bg-white/5 p-5" x-data="{ 
+          count: 0, 
+          target: 45, 
+          counted: false,
+          init() {
+            window.addEventListener('scroll', () => {
+              const rect = this.$el.getBoundingClientRect();
+              const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+              if (isVisible && !this.counted) {
+                this.counted = true;
+                this.animateCounter();
+              }
+            });
+          },
+          animateCounter() {
+            const duration = 2000;
+            const start = 0;
+            const increment = this.target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+              current += increment;
+              if (current >= this.target) {
+                current = this.target;
+                clearInterval(timer);
+              }
+              this.count = Math.floor(current);
+            }, 16);
+          }
+        }">
+          <p class="text-3xl font-semibold" x-text="count">0</p>
           <p class="mt-1 text-xs uppercase tracking-widest text-white/70">Program Pengabdian Alumni</p>
         </div>
       </div>
-      <div class="mt-6 rounded-2xl bg-white/90 p-5 text-slate-700 shadow-lg" x-data="{ currentSlide: 0, slides: [
+      
+            <div class="mt-6 rounded-2xl bg-white/90 p-5 text-slate-700 shadow-lg" x-data="{ currentSlide: 0, slides: [
         {
           title: 'Alumni Gathering Nasional 2024',
           date: '14 Desember 2024',
