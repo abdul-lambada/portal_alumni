@@ -106,47 +106,47 @@
     </script>
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "EducationalOrganization",
-      "name": "SMK/SMA/MA",
-      "url": "{{ url('/') }}",
-      "logo": "{{ asset('images/logo.png') }}",
-      "description": "Portal resmi alumni SMK/SMA/MA: pusat informasi, jejaring profesional, kegiatan, dan layanan untuk seluruh lulusan.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "ID",
-        "addressLocality": "Indonesia"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+62-xxx-xxxx-xxxx",
-        "contactType": "customer service",
-        "availableLanguage": ["Indonesian"],
-        "email": "alumni@smksam.sch.id"
-      },
-      "sameAs": [
-        "{{ url('/facebook') }}",
-        "{{ url('/instagram') }}",
-        "{{ url('/linkedin') }}"
-      ],
-      "offers": {
-        "@type": "Offer",
-        "name": "Portal Alumni Services",
-        "description": "Layanan tracer study, legalisir ijazah, surat rekomendasi, dan kolaborasi industri",
-        "category": "Educational Services"
-      },
-      "mainEntity": {
-        "@type": "WebSite",
-        "name": "Portal Alumni SMK/SMA/MA",
-        "url": "{{ url('/') }}",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "{{ url('/search?q={search_term_string}') }}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-    }
+    {!! json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'EducationalOrganization',
+        'name' => 'SMK/SMA/MA',
+        'url' => url('/'),
+        'logo' => asset('images/logo.png'),
+        'description' => 'Portal resmi alumni SMK/SMA/MA: pusat informasi, jejaring profesional, kegiatan, dan layanan untuk seluruh lulusan.',
+        'address' => [
+            '@type' => 'PostalAddress',
+            'addressCountry' => 'ID',
+            'addressLocality' => 'Indonesia',
+        ],
+        'contactPoint' => [
+            '@type' => 'ContactPoint',
+            'telephone' => '+62-xxx-xxxx-xxxx',
+            'contactType' => 'customer service',
+            'availableLanguage' => ['Indonesian'],
+            'email' => 'alumni@smksam.sch.id',
+        ],
+        'sameAs' => [
+            url('/facebook'),
+            url('/instagram'),
+            url('/linkedin'),
+        ],
+        'offers' => [
+            '@type' => 'Offer',
+            'name' => 'Portal Alumni Services',
+            'description' => 'Layanan tracer study, legalisir ijazah, surat rekomendasi, dan kolaborasi industri',
+            'category' => 'Educational Services',
+        ],
+        'mainEntity' => [
+            '@type' => 'WebSite',
+            'name' => 'Portal Alumni SMK/SMA/MA',
+            'url' => url('/'),
+            'potentialAction' => [
+                '@type' => 'SearchAction',
+                'target' => url('/search?q={search_term_string}'),
+                'query-input' => 'required name=search_term_string',
+            ],
+        ],
+    ], JSON_UNESCAPED_SLASHES|JSON_UNESCAPED_UNICODE) !!}
     </script>
     
     <style>

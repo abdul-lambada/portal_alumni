@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\HtmlString;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class PublicController extends Controller
@@ -72,5 +74,19 @@ class PublicController extends Controller
             'statistics' => $statistics,
             'programs' => $programs,
         ]);
+    }
+
+    public function submitLayanan(Request $request): RedirectResponse
+    {
+        $validated = $request->validate([
+            'nama' => ['required', 'string', 'min:3'],
+            'angkatan' => ['nullable', 'string', 'max:10'],
+            'layanan' => ['required', 'string'],
+            'pesan' => ['required', 'string', 'min:10'],
+        ]);
+
+        // TODO: simpan ke database atau kirim email sesuai kebutuhan aplikasi
+
+        return back()->with('status', 'Permohonan layanan berhasil dikirim.');
     }
 }
